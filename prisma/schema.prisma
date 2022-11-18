@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model production {
+  id               Int     @id @default(autoincrement())
+  of               String? @unique
+  lot              String? @db.VarChar(200)
+  produit           String? @db.VarChar(200)
+  reference        String? @db.VarChar(200)
+  reference_sorea  String? @db.VarChar(200)
+  reference_eai    String? @db.VarChar(200)
+  status_of        String? @db.VarChar(200)
+  flux             String? @db.VarChar(200)
+  date_de_commande String? @db.VarChar(200)
+  qte_bdee         String? @db.VarChar(200)
+  rebut_total         String? @db.VarChar(200)
+  ecr_brut         String? @db.VarChar(200)
+  ecr_net          String? @db.VarChar(200)
+  taux_de_rebut    String? @db.VarChar(200)
+  observation_prod String? @db.VarChar(200)
+  demontage        String? @db.VarChar(200)
+  reste_a_demonter String? @db.VarChar(200)
+  sous_ensemble    String? @db.VarChar(200)
+  rebut_sous_ens   String? @db.VarChar(200)
+  montage          String? @db.VarChar(200)
+  rebut_montage    String? @db.VarChar(200)
+  Export           String? @db.VarChar(200)
+  rebut_export     String? @db.VarChar(200)
+  reste_a_Exporter String? @db.VarChar(200)
+  bloquage         String? @db.VarChar(200)
+  zingueur         String? @db.VarChar(200)
+}
+
+model traceability {
+  id               Int     @id @default(autoincrement())
+  of String @db.VarChar(200)
+  emp String @db.VarChar(200)
+  lot String @db.VarChar(200)
+  prepare String @db.VarChar(200)
+  rebut String @db.VarChar(200)
+  comment String @db.VarChar(200)
+  userName String @db.VarChar(200)
+  table String @db.VarChar(200)
+  matricule String @db.VarChar(200)
+  date_doperation String? @db.VarChar(200)
+}
+model users {
+  id               Int     @id @default(autoincrement())
+  userName  String @unique
+  role      String
+  matricule String @unique
+  password  String
+}

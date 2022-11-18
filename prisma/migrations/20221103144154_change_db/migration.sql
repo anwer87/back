@@ -1,0 +1,11 @@
+-- AlterTable
+ALTER TABLE `traceability` MODIFY `lot` VARCHAR(200) NOT NULL,
+    MODIFY `of` VARCHAR(200) NOT NULL,
+    MODIFY `table` VARCHAR(200) NOT NULL,
+    MODIFY `date_doperation` VARCHAR(200) NULL,
+    MODIFY `comment` VARCHAR(200) NOT NULL,
+    MODIFY `emp` VARCHAR(200) NOT NULL,
+    MODIFY `prepare` VARCHAR(200) NOT NULL,
+    MODIFY `rebut` VARCHAR(200) NOT NULL,
+    MODIFY `userName` VARCHAR(200) NOT NULL,
+    MODIFY `matricule` VARCHAR(200) NOT NULL;
